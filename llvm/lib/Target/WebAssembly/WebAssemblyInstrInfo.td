@@ -421,6 +421,7 @@ def : Pat<(i64 (WebAssemblyWrapperREL texternalsym:$addr)),
 // Additional sets of instructions.
 //===----------------------------------------------------------------------===//
 
+include "WebAssemblyInstrAdamnite.td"
 include "WebAssemblyInstrMemory.td"
 include "WebAssemblyInstrCall.td"
 include "WebAssemblyInstrControl.td"

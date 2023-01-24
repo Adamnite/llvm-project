@@ -326,6 +326,7 @@ namespace clang {
     enum {
       LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
+#include "clang/Basic/BuiltinsAdamnite.def"
 #include "clang/Basic/BuiltinsWebAssembly.def"
       LastTSBuiltin
     };

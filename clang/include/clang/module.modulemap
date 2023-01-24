@@ -32,6 +32,7 @@ module Clang_Basic {
   umbrella "Basic"
 
   textual header "Basic/AArch64SVEACLETypes.def"
+  textual header "Basic/BuiltinsAdamnite.def"
   textual header "Basic/BuiltinsAArch64.def"
   textual header "Basic/BuiltinsAMDGPU.def"
   textual header "Basic/BuiltinsAArch64NeonSVEBridge.def"
