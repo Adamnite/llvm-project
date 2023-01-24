@@ -20,6 +20,6 @@ def int_wasm_advm_contract_addr : Intrinsic<[llvm_ptr_ty], [], [IntrReadMem]>;
 def int_wasm_advm_caller_addr : Intrinsic<[llvm_ptr_ty], [], [IntrReadMem]>;
 
 // Query block's timestamp
-def int_wasm_advm_block_ts : Intrinsic<[llvm_anyint_ty], [], [IntrReadMem]>;
+def int_wasm_advm_block_ts : Intrinsic<[llvm_i64_ty], [], [IntrReadMem]>;
 
 } // TargetPrefix = "wasm"

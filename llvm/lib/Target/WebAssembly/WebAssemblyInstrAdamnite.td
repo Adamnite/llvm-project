@@ -34,5 +34,4 @@ defm ADVM_BLOCK_TS_A#B : I<(outs rc:$ts), (ins), (outs), (ins),
                            0xc6>;
 }
 
-defm : AdamniteOps<I32, "32">;
 defm : AdamniteOps<I64, "64">;
