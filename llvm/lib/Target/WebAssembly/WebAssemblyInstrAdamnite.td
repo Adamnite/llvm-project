@@ -32,6 +32,15 @@ defm ADVM_BLOCK_TS_A#B : I<(outs rc:$ts), (ins), (outs), (ins),
                            "advm.block.ts\t$ts",
                            "advm.block.ts",
                            0xc6>;
+
+// Balances.
+defm ADVM_BALANCES_A#B : I<(outs rc:$balance), (ins i32imm:$addr),
+                           (outs), (ins i32imm:$addr),
+                           [(set rc:$balance,
+                             (int_wasm_advm_balances (i32 imm:$addr)))],
+                           "advm.balances\t$balance, $addr",
+                           "advm.balances\t$addr",
+                           0xc2>;
 }
 
 defm : AdamniteOps<I64, "64">;

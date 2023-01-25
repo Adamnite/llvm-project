@@ -17999,6 +17999,12 @@ Value *CodeGenFunction::EmitWebAssemblyBuiltinExpr(unsigned BuiltinID,
     Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_advm_block_ts, ResultType);
     return Builder.CreateCall(Callee);
   }
+  case WebAssembly::BI__builtin_wasm_advm_balances: {
+    llvm::Type *ResultType = ConvertType(E->getType());
+    Value *Args[] = {EmitScalarExpr(E->getArg(0))};
+    Function *Callee = CGM.getIntrinsic(Intrinsic::wasm_advm_balances, ResultType);
+    return Builder.CreateCall(Callee, Args);
+  }
   case WebAssembly::BI__builtin_wasm_memory_size: {
     llvm::Type *ResultType = ConvertType(E->getType());
     Value *I = EmitScalarExpr(E->getArg(0));

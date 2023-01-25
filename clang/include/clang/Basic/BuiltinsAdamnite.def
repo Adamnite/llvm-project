@@ -19,3 +19,4 @@
 BUILTIN(__builtin_wasm_advm_contract_addr, "cC*", "nc")
 BUILTIN(__builtin_wasm_advm_caller_addr, "cC*", "nc")
 BUILTIN(__builtin_wasm_advm_block_ts, "LLi", "nc")
+BUILTIN(__builtin_wasm_advm_balances, "W*cC*", "n")
