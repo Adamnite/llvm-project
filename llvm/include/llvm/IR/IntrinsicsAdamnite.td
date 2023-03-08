@@ -11,20 +11,18 @@
 ///
 //===----------------------------------------------------------------------===//
 
-def llvm_i64_ptr_ty : LLVMPointerType<llvm_i8_ty>;
-
 let TargetPrefix = "wasm" in {  // All intrinsics start with "llvm.wasm.".
 
 // Query contract's address
-def int_wasm_advm_contract_addr : Intrinsic<[llvm_ptr_ty], [], [IntrReadMem]>;
+def int_wasm_advm_contract_address : Intrinsic<[llvm_i64_ty], [], [IntrReadMem]>;
 
 // Query caller's address
-def int_wasm_advm_caller_addr : Intrinsic<[llvm_ptr_ty], [], [IntrReadMem]>;
+def int_wasm_advm_caller_address : Intrinsic<[llvm_i64_ty], [], [IntrReadMem]>;
 
 // Query block's timestamp
 def int_wasm_advm_block_ts : Intrinsic<[llvm_i64_ty], [], [IntrReadMem]>;
 
 // Query balance
-def int_wasm_advm_balances : Intrinsic<[llvm_i64_ptr_ty], [llvm_ptr_ty]>;
+def int_wasm_advm_balances : Intrinsic<[llvm_i64_ty], [llvm_i64_ty], [IntrReadMem, IntrArgMemOnly]>;
 
 } // TargetPrefix = "wasm"

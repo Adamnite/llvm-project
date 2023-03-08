@@ -14,14 +14,14 @@
 multiclass AdamniteOps<WebAssemblyRegClass rc, string B> {
 // Contract address.
 defm ADVM_CONTRACT_ADDR_A#B : I<(outs rc:$addr), (ins), (outs), (ins),
-                                [(set rc:$addr, (int_wasm_advm_contract_addr))],
+                                [(set rc:$addr, (int_wasm_advm_contract_address))],
                                 "advm.contract.address\t$addr",
                                 "advm.contract.address",
                                 0xc1>;
 
 // Caller address.
 defm ADVM_CALLER_ADDR_A#B : I<(outs rc:$addr), (ins), (outs), (ins),
-                              [(set rc:$addr, (int_wasm_advm_caller_addr))],
+                              [(set rc:$addr, (int_wasm_advm_caller_address))],
                               "advm.caller.address\t$addr",
                               "advm.caller.address",
                               0xc3>;
@@ -34,10 +34,10 @@ defm ADVM_BLOCK_TS_A#B : I<(outs rc:$ts), (ins), (outs), (ins),
                            0xc6>;
 
 // Balances.
-defm ADVM_BALANCES_A#B : I<(outs rc:$balance), (ins i32imm:$addr),
-                           (outs), (ins i32imm:$addr),
+defm ADVM_BALANCES_A#B : I<(outs rc:$balance), (ins i64imm:$addr),
+                           (outs), (ins i64imm:$addr),
                            [(set rc:$balance,
-                             (int_wasm_advm_balances (i32 imm:$addr)))],
+                             (int_wasm_advm_balances (i64 imm:$addr)))],
                            "advm.balances\t$balance, $addr",
                            "advm.balances\t$addr",
                            0xc2>;
